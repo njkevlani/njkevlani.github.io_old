@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO for Arch Linux Installation</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <style>
+        *{
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+      
+        img{
+            box-shadow: 0 0 10px
+        }
+
+        code{
+            font-family: monospace;
+            line-height: 130%;
+        }
+
+        code.multi_line{
+            white-space: pre-wrap;
+            display: block;
+            background: #eeeeee;
+            border-radius: 5px;
+            padding-left: 15px;
+        }
+        
+        p.code_heading{
+            line-height: 130%;
+            margin-bottom: 0;
+            padding-left: 15px;
+            background: #dddddd;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div id="index">
+            <h1>Index</h1>
+            <hr>
+            <ol class="arrow_bullet">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#basic_system">Basic System</a></li>
+                <li><a href="#bash_profile">Bash Profile</a></li>
+                <li><a href="#udisk_polkit_trick">Udisk-Polkit trick</a></li>
+                <li><a href="">Some Cool Scripts</a></li>
+            </ol>
+        </div>
+
+        <div id="introduction">
+            <h1>Introduction</h1>
+            <hr>
+            <figure>
+                <img src="public/images/1.png" alt="Setup image" class="img-fluid">
+                <figcaption>A screenshot of my final system</figcaption>
+            </figure>
+            <p>
+                Hello reader! This page consists of things that I install while installing Arch Linux. Somethings may vary if you are installing other distro (Like package manager, some commands, etc.) This list start from most basic utilities like device drivers and range till tweaks for some system utilities!
+            </p>        
+        </div>
+        
+        <div id="basic_system">
+            <h1>Basic System</h1>
+            <hr>
+            <p>
+                After installing <code>base</code> packages and <code>arch-chroot</code>ing, I run following command for installing video driver, basic utilities, etc.
+            </p>                  
+            <code class="code_fetch" id="install.sh"></code>
+            <p>
+                You can download this script <a href="public/scripts/install.sh">here</a>.
+            </p>      
+        </div>
+
+        <div id="bash_profile">
+            <h1>Bash Profile</h1>
+            <hr>
+            <p>I append my <code>.bashrc</code> with following contents.</p>
+            <code class="code_fetch" id="bashrc"></code>
+            <p>You can download this <a href="public/scripts/bashrc">here</a>.</p>
+            <figure>
+                <img src="public/images/PS1.png" alt="PS1" class="img-fluid">
+                <figcaption>A screenshot of bash prompt, PS1</figcaption>
+            </figure>            
+            <p class="code_heading">Content of <code>bash_profile</code> are as follow</p>
+            <code class="code_fetch" id="bash_profile"></code>
+            <p>It sources <code>.bashrc</code>, starts display-server <code>xorg</code> and remap some keys if I log in on <code>tty1</code>. You can get it <a href="public/scripts/bash_profile">here</a>.</p>
+
+        </div>
+
+        <div id="udisk_polkit_trick">
+                <h1>Udisk-Polkit trick</h1>
+                <hr>
+                <p>I had a problem that each time I try to mount my external disk, I had to enter my password. To solve this problem, we can add a rule for <code>polkit</code>, stating that no password is needed while I'm mounting an external partition.</p>
+                <p class="code_heading">Add the following content into <code>/etc/polkit-1/rules.d/10-udisks2.rules</code></p>
+                <code class="code_fetch" id="udisk.rules"></code>
+                <p>You can download it <a href="public/scripts/udisk.rules">here</a>.</p>
+                
+        </div>
+
+        <div id="some_cool_scripts">
+                <h1>Some Cool Scripts</h1>
+                <hr>
+                <p>Whenever I find some cool script, I just steal it! Some of my favourite ones are as follow:</p>
+
+                <h4>Bandwidth</h4>
+                <p>Print total (upload + download) speed through an interface. Change interface from <code>wlp3s0</code> to the one you want to use it for.</p>
+                <code class="code_fetch" id="bandwidth"></code>
+                <p>You can download it <a href="public/scripts/bandwidth">here</a>.</p>
+                
+                <h4>Bonsai</h4>
+                <p>Print a beautiful tree using ASCII characters!</p>
+                <code class="code_fetch" id="bonsai"></code>
+                <figure style="margin-top: 15px; margin-bottom: 0px;">
+                    <img src="public/images/bonsai.png" alt="Bonsai image" class="img-fluid">
+                    <figcaption>ASCII Bonsai</figcaption>
+                </figure>
+                <p>You can download it <a href="public/scripts/bonsai">here</a>.</p>
+
+                <h4>Colorpanes</h4>
+                <p>Print Colorpanes based on color scheme of your terminal.</p>
+                <code class="code_fetch" id="colorpanes"></code>
+                <figure style="margin-top: 15px; margin-bottom: 0px;">
+                    <img src="public/images/colorpanes.png" alt="Colorpanes image" class="img-fluid">
+                    <figcaption>Colorpanes</figcaption>
+                </figure>
+                <p>You can download it <a href="public/scripts/colorpanes">here</a>.</p>          
+                
+                <h4>CPU Udage</h4>
+                <p>Print total CPU Usage.</p>
+                <code class="code_fetch" id="cpu_usage"></code>
+                <p>You can download it <a href="public/scripts/cpu_usage">here</a>.</p>
+
+                <h4>lsbytesum</h4>
+                <p>Print total of all files in current working directory.</p>
+                <code class="code_fetch" id="lsbytesum"></code>
+                <p>You can download it <a href="public/scripts/lsbytesum">here</a>.</p>
+
+                <h4>Pipes.sh</h4>
+                <p>Print a beautiful, colorful, random pipes(lines) in terminal.</p>
+                <code class="code_fetch" id="pipes"></code>
+                <figure style="margin-top: 15px; margin-bottom: 0px;">
+                    <img src="public/images/pipes.png" alt="Pipes image" class="img-fluid">
+                    <figcaption>ASCII Pipe</figcaption>
+                </figure>
+                <p>You can download it <a href="public/scripts/pipes">here</a>.</p>
+        </div> 
+    </div>
+
+    <script>
+        codeBlocks = document.getElementsByClassName("code_fetch");
+        for(var codeBlock of codeBlocks){(function(codeBlock){
+            var client = new XMLHttpRequest();
+            client.open("GET", "public/scripts/"+codeBlock.id);
+            client.onreadystatechange = function() {
+                codeBlock.innerText = client.responseText;
+                codeBlock.classList.add("multi_line");
+                codeBlock.classList.add("prettyprint");
+            }
+            client.send();
+        })(codeBlock)}
+    </script>
+</body>
+</html>
