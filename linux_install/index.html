@@ -28,6 +28,7 @@
         }
 
         code.multi_line{
+            display: none;
             white-space: pre-wrap;
             display: block;
             background: #eeeeee;
@@ -55,7 +56,7 @@
                 <li><a href="#basic_system">Basic System</a></li>
                 <li><a href="#bash_profile">Bash Profile</a></li>
                 <li><a href="#udisk_polkit_trick">Udisk-Polkit trick</a></li>
-                <li><a href="">Some Cool Scripts</a></li>
+                <li><a href="#some_cool_scripts">Some Cool Scripts</a></li>
             </ol>
         </div>
 
@@ -77,7 +78,7 @@
             <p>
                 After installing <code>base</code> packages and <code>arch-chroot</code>ing, I run following command for installing video driver, basic utilities, etc.
             </p>
-            <p class="code_heading">install.sh</p>               
+            <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> install.sh</p>               
             <code class="code_fetch" id="install.sh"></code>
             <p>
                 You can download this script <a href="public/scripts/install.sh">here</a>.
@@ -88,7 +89,7 @@
             <h1>Bash Profile</h1>
             <hr>
             <p>I append my <code>.bashrc</code> with following contents.</p>
-            <p class="code_heading">.bashrc</p>
+            <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> .bashrc</p>
             <code class="code_fetch" id="bashrc"></code>
             <p>You can download this <a href="public/scripts/bashrc">here</a>.</p>
             <figure>
@@ -97,7 +98,7 @@
             </figure>
 
             <p>Content of <code>bash_profile</code> are as follow. It sources <code>.bashrc</code>, starts display-server <code>xorg</code> and remap some keys if I log in on <code>tty1</code>.</p>
-            <p class="code_heading">.bash_profile</p>
+            <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> .bash_profile</p>
             <code class="code_fetch" id="bash_profile"></code>
             <p>You can get it <a href="public/scripts/bash_profile">here</a>.</p>
 
@@ -108,7 +109,7 @@
                 <hr>
                 <p>I had a problem that each time I try to mount my external disk, I had to enter my password. To solve this problem, we can add a rule for <code>polkit</code>, stating that no password is needed while I'm mounting an external partition.</p>
                 <p>Add the following content into <code>/etc/polkit-1/rules.d/10-udisks2.rules</code></p>
-                <p class="code_heading">udisk.rules</p>
+                <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> udisk.rules</p>
                 <code class="code_fetch" id="udisk.rules"></code>
                 <p>You can download it <a href="public/scripts/udisk.rules">here</a>.</p>
                 
@@ -121,13 +122,13 @@
 
                 <h4>Bandwidth</h4>
                 <p>Print total (upload + download) speed through an interface. Change interface from <code>wlp3s0</code> to the one you want to use it for.</p>
-                <p class="code_heading">bandwidth</p>
+                <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> bandwidth</p>
                 <code class="code_fetch" id="bandwidth"></code>
                 <p>You can download it <a href="public/scripts/bandwidth">here</a>.</p>
                 
                 <h4>Bonsai</h4>
                 <p>Print a beautiful tree using ASCII characters!</p>
-                <p class="code_heading">bonsai</p>                
+                <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> bonsai</p>                
                 <code class="code_fetch" id="bonsai"></code>
                 <p>You can download it <a href="public/scripts/bonsai">here</a>.</p>
                 <figure style="margin-top: 15px;">
@@ -137,7 +138,7 @@
 
                 <h4>Colorpanes</h4>
                 <p>Print Colorpanes based on color scheme of your terminal.</p>
-                <p class="code_heading">colorpanes</p>
+                <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> colorpanes</p>
                 <code class="code_fetch" id="colorpanes"></code>
                 <p>You can download it <a href="public/scripts/colorpanes">here</a>.</p>          
                 <figure style="margin-top: 15px;">
@@ -147,19 +148,19 @@
                 
                 <h4>CPU Udage</h4>
                 <p>Print total CPU Usage.</p>
-                <p class="code_heading">cpu_usage</p>
+                <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> cpu_usage</p>
                 <code class="code_fetch" id="cpu_usage"></code>
                 <p>You can download it <a href="public/scripts/cpu_usage">here</a>.</p>
 
                 <h4>lsbytesum</h4>
                 <p>Print total of all files in current working directory.</p>
-                <p class="code_heading">labytesum</p>
+                <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> labytesum</p>
                 <code class="code_fetch" id="lsbytesum"></code>
                 <p>You can download it <a href="public/scripts/lsbytesum">here</a>.</p>
 
                 <h4>Pipes.sh</h4>
                 <p>Print a beautiful, colorful, random pipes(lines) in terminal.</p>
-                <p class="code_heading"><i class="fas fa-window-minimize"></i> pipe.sh</p>
+                <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> pipe.sh</p>
                 <code class="code_fetch" id="pipes"></code>
                 <p>You can download it <a href="public/scripts/pipes">here</a>.</p>
                 <figure style="margin-top: 15px;">
@@ -178,9 +179,23 @@
                 codeBlock.innerText = client.responseText;
                 codeBlock.classList.add("multi_line");
                 codeBlock.classList.add("prettyprint");
+                codeBlock.style.display = "none";
             }
             client.send();
         })(codeBlock)}
+
+        function toggleVisibility(ele){
+            var codeElement = ele.parentElement.nextElementSibling;
+
+            if(codeElement.style.display == "none"){
+                ele.style.color = "red";
+                codeElement.style.display = "block";
+            }
+            else{
+                ele.style.color = "green";                
+                codeElement.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
