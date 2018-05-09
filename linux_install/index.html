@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
     <style>
@@ -48,7 +50,7 @@
         <div id="index">
             <h1>Index</h1>
             <hr>
-            <ol class="arrow_bullet">
+            <ol>
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#basic_system">Basic System</a></li>
                 <li><a href="#bash_profile">Bash Profile</a></li>
@@ -74,7 +76,8 @@
             <hr>
             <p>
                 After installing <code>base</code> packages and <code>arch-chroot</code>ing, I run following command for installing video driver, basic utilities, etc.
-            </p>                  
+            </p>
+            <p class="code_heading">install.sh</p>               
             <code class="code_fetch" id="install.sh"></code>
             <p>
                 You can download this script <a href="public/scripts/install.sh">here</a>.
@@ -85,13 +88,15 @@
             <h1>Bash Profile</h1>
             <hr>
             <p>I append my <code>.bashrc</code> with following contents.</p>
+            <p class="code_heading">.bashrc</p>
             <code class="code_fetch" id="bashrc"></code>
             <p>You can download this <a href="public/scripts/bashrc">here</a>.</p>
             <figure>
                 <img src="public/images/PS1.png" alt="PS1" class="img-fluid">
                 <figcaption>A screenshot of bash prompt, PS1</figcaption>
             </figure>            
-            <p class="code_heading">Content of <code>bash_profile</code> are as follow</p>
+            <p>Content of <code>bash_profile</code> are as follow.</p>
+            <p class="code_heading">.bash_profile</p>
             <code class="code_fetch" id="bash_profile"></code>
             <p>It sources <code>.bashrc</code>, starts display-server <code>xorg</code> and remap some keys if I log in on <code>tty1</code>. You can get it <a href="public/scripts/bash_profile">here</a>.</p>
 
@@ -101,7 +106,8 @@
                 <h1>Udisk-Polkit trick</h1>
                 <hr>
                 <p>I had a problem that each time I try to mount my external disk, I had to enter my password. To solve this problem, we can add a rule for <code>polkit</code>, stating that no password is needed while I'm mounting an external partition.</p>
-                <p class="code_heading">Add the following content into <code>/etc/polkit-1/rules.d/10-udisks2.rules</code></p>
+                <p>Add the following content into <code>/etc/polkit-1/rules.d/10-udisks2.rules</code></p>
+                <p class="code_heading">udisk.rules</p>
                 <code class="code_fetch" id="udisk.rules"></code>
                 <p>You can download it <a href="public/scripts/udisk.rules">here</a>.</p>
                 
@@ -114,11 +120,13 @@
 
                 <h4>Bandwidth</h4>
                 <p>Print total (upload + download) speed through an interface. Change interface from <code>wlp3s0</code> to the one you want to use it for.</p>
+                <p class="code_heading">bandwidth</p>
                 <code class="code_fetch" id="bandwidth"></code>
                 <p>You can download it <a href="public/scripts/bandwidth">here</a>.</p>
                 
                 <h4>Bonsai</h4>
                 <p>Print a beautiful tree using ASCII characters!</p>
+                <p class="code_heading">bonsai</p>                
                 <code class="code_fetch" id="bonsai"></code>
                 <figure style="margin-top: 15px; margin-bottom: 0px;">
                     <img src="public/images/bonsai.png" alt="Bonsai image" class="img-fluid">
@@ -128,6 +136,7 @@
 
                 <h4>Colorpanes</h4>
                 <p>Print Colorpanes based on color scheme of your terminal.</p>
+                <p class="code_heading">colorpanes</p>
                 <code class="code_fetch" id="colorpanes"></code>
                 <figure style="margin-top: 15px; margin-bottom: 0px;">
                     <img src="public/images/colorpanes.png" alt="Colorpanes image" class="img-fluid">
@@ -137,16 +146,19 @@
                 
                 <h4>CPU Udage</h4>
                 <p>Print total CPU Usage.</p>
+                <p class="code_heading">cpu_usage</p>
                 <code class="code_fetch" id="cpu_usage"></code>
                 <p>You can download it <a href="public/scripts/cpu_usage">here</a>.</p>
 
                 <h4>lsbytesum</h4>
                 <p>Print total of all files in current working directory.</p>
+                <p class="code_heading">labytesum</p>
                 <code class="code_fetch" id="lsbytesum"></code>
                 <p>You can download it <a href="public/scripts/lsbytesum">here</a>.</p>
 
                 <h4>Pipes.sh</h4>
                 <p>Print a beautiful, colorful, random pipes(lines) in terminal.</p>
+                <p class="code_heading"><i class="fas fa-window-minimize"></i> pipe.sh</p>
                 <code class="code_fetch" id="pipes"></code>
                 <figure style="margin-top: 15px; margin-bottom: 0px;">
                     <img src="public/images/pipes.png" alt="Pipes image" class="img-fluid">
