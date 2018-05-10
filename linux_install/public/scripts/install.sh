@@ -1,4 +1,7 @@
 #! bin/bash
+## Set password for root user
+passwd
+
 ## Installing basic stuff
 
 # Installing bootloader video drivers, display server
@@ -47,13 +50,19 @@ EOF
 # Configuring user nilesh
 useradd -m -G wheel nilesh
 usermod -c "Nilesh" nilesh
-visudo
-su nilesh
-yaourt xfwm4-git google-chrome ttf-ms-fonts
-cat << EOF >> /home/nilesh/.xinitrc
+passwd nilesh
+cat << EOF >> /etc/sudoer
+
+%wheel ALL=(ALL) ALL 
+
+EOF
+
+# Running some commands as system user.
+# ATM, xfwm4-git is much better than stable version.
+su nilesh -c "yaourt xfwm4-git google-chrome ttf-ms-fonts; cat << EOF >> /home/nilesh/.xinitrc
 startxfce4
 EOF
-exit
+"
 
 # Instaling Desktop environment
 pacman -S xfce4 xfce4-goodies
@@ -86,10 +95,3 @@ systemctl enable slock@nilesh.service
 # Install grub
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
-
-# Setitng password for root and nilesh
-passwd
-passwd nilesh
-
-# Done, rebooting.
-reboot
