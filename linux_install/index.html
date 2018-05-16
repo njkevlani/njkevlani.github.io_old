@@ -74,6 +74,7 @@
             <ol>
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#basic_system">Basic System</a></li>
+                <li><a href="#font_rendering">Font Rendering</a></li>                
                 <li><a href="#bash_profile">Bash Profile</a></li>
                 <li><a href="#udisk_polkit_trick">Udisk-Polkit trick</a></li>
                 <li><a href="#some_cool_scripts">Some Cool Scripts</a></li>
@@ -102,6 +103,29 @@
             <code class="code_fetch" id="install.sh"></code>
             <p>
                 You can download this script <a href="public/scripts/install.sh">here</a>.
+            </p>      
+        </div>
+
+        <div id="font_rendering">
+            <h1>Font Rendering</h1>
+            <hr>
+            <p>
+                By default, font rendering isn't great on most of Linux distros. This can easily solved by installing some font pacakges. For Arch Linux, I preffere to install following font packages.
+                <ul>
+                    <li><code>noto-fonts</code></li>
+                    <li><code>ttf-dejavu</code></li>
+                    <li><code>ttf-liberation</code></li>
+                    <li><code>ttf-ubuntu-font-family</code></li>
+                    <li><code>ttf-roboto</code></li>
+                </ul>
+            </p>
+            <p>
+                For better Emoji rendering, we need to install <code>noto-fonts-emoji</code> and save following configuration at <code>~/.config/fontconfig/conf.d/01-emoji.conf</code> as well.
+            </p>
+            <p class="code_heading"> <span id="temp" title="Show more | less" style="cursor: pointer; color: green;" onclick="toggleVisibility(this)"><i class="fas fa-circle"></i></span> 01-emoji.conf</p>               
+            <code class="code_fetch" id="01-emoji.conf"></code>
+            <p>
+                You can download this file <a href="public/scripts/01-emoji.conf">here</a>.
             </p>      
         </div>
 

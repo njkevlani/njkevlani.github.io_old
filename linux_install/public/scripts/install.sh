@@ -16,9 +16,6 @@ pacman -S grub os-prober
 # Installing bluetool, network managers
 pacman -S networkmanager network-manager-applet blueman
 
-# Installing fonts, It does matters a lot
-pacman -S ttf-ubuntu-font-family noto-fonts ttf-dejavu ttf-liberation
-
 # Installing theme and icons
 pacman -S numix-gtk-theme papirus-icon-theme gtk-engine-murrine
 
